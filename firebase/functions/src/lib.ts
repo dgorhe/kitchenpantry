@@ -16,7 +16,7 @@ export class Ingredient {
 
     changeQuantity(qty: number): void {
         // Check qty for some characteristics
-        this.quantity = qty
+        this.quantity = qty;
         this.lastUpdated = firestore.Timestamp.now();
     }
 }
