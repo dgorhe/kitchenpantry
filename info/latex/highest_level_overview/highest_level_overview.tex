@@ -1,0 +1,118 @@
+\documentclass[border=0.2cm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+
+%\title{Highest Level Overview of Kitchen Pantry}
+%\author{Darvesh Gorhe}
+ 
+\begin{document}
+% TODO: Save tikzpicture as image every time it's rendered 
+
+ 
+\begin{tikzpicture}[font=\small,thick]
+ 
+% Start block
+\node[draw,
+    rectangle,
+    minimum width=2.5cm,
+    minimum height=1cm] (firestore) {Firestore};
+ 
+% Voltage and Current Measurement
+\node[draw,
+	rectangle,
+    below=of firestore,
+    minimum width=2.5cm,
+    minimum height=1cm
+] (functions) { Firebase Functions };
+ 
+% Power and voltage variation
+\node[draw,
+    left=of functions,
+    minimum width=2.5cm,
+    minimum height=1cm
+] (gcp) { Google Cloud Platform };
+ 
+ 
+\node[draw,
+    rectangle,
+    right=of functions,
+    minimum height = 1cm,
+    minimum width=2.5cm,
+    inner sep=0] (storage) {Firebase Storage};
+    
+    
+\node[draw,
+	rectangle,
+	below=of functions,
+	minimum height = 1cm,
+	minimum width=2cm
+] (reactnative) {React Native};
+
+
+\node[draw,
+	rectangle,
+	right=of reactnative,
+	minimum height = 1cm,
+	minimum width=2cm
+] (react) {React};
+
+\node[draw,
+	rectangle,
+	below=of react,
+	minimum height = 1cm,
+	minimum width=2cm
+] (web) {Web};
+
+\node[draw,
+	rectangle,
+	below=of reactnative,
+	minimum height = 1cm,
+	minimum width=2cm
+] (android) {Android};
+
+
+\node[draw,
+	rectangle,
+	left=of android,
+	minimum height = 1cm,
+	minimum width=2cm
+] (ios) {iOS};
+ 
+ 
+% Arrows
+\draw[<->] (firestore) edge (functions)
+    (functions) edge (gcp)
+    (functions) edge (storage)
+    (functions) edge (reactnative);
+   
+\draw[->]  (functions) edge (react)
+    (react) edge (web)
+    (reactnative) edge (android)
+    (reactnative) edge (ios);
+ 
+%\draw[-latex] (block4) -| (block5)
+%    node[pos=0.25,fill=white,inner sep=0]{Yes};
+% 
+%\draw[-latex] (block4) -| (block6)
+%    node[pos=0.25,fill=white,inner sep=0]{No};
+ 
+%\draw[-latex] (block5) edge node[pos=0.4,fill=white,inner sep=2pt]{No}(block7)
+%    (block5) -| (block8)
+%        node[pos=0.25,fill=white,inner sep=0]{Yes};
+% 
+%\draw[-latex] (block6) edge node[pos=0.4,fill=white,inner sep=2pt]{No}(block9)
+%    (block6) -| (block10)
+%        node[pos=0.25,fill=white,inner sep=0]{Yes};
+% 
+%\draw (block7) |- (block12);
+%\draw (block9) |- (block12);
+%\draw (block8) |- (block7|-block12);
+%\draw (block10) |- (block9|-block12);
+%\draw[-latex] (block12) -- (block11);
+
+
+
+ 
+\end{tikzpicture}
+ 
+\end{document}
