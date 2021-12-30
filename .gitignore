@@ -8,6 +8,10 @@ firebase-debug.log*
 firebase-debug.*.log*
 .DS_Store
 
+# based.cooking
+based.cooking/*.csv
+based.cooking/*.json
+
 # Firebase cache
 .firebase/
 
