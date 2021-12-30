@@ -11,6 +11,7 @@ firebase-debug.*.log*
 # based.cooking
 based.cooking/*.csv
 based.cooking/*.json
+based.cooking/.ipynb_checkpoints/*
 
 # Firebase cache
 .firebase/
