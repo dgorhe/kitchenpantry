@@ -4,6 +4,6 @@ This is the repository for the app Kitchen Pantry. This may not be public in the
 Here's a high-level overview of the project
 
 <img style="display: block; margin: auto;"
-src="./info/latex/highest_level_overview/highest_level_overview.jpeg">
+src="https://github.com/dgorhe/kitchenpantry/blob/main/info/latex/highest_level_overview/highest_level_overview.jpeg">
 
 The Google Cloud Platform section is intended for the machine learning experimentation, training, and deployment. The models are deployed via Google's Vertex AI service which wraps PyTorch models in a Docker container and creates HTTPS endpoints to expose them to other web services within the same project (i.e Firebase Cloud Functions in this case). They can be opened to the entire web but this is obviously a security risk.
