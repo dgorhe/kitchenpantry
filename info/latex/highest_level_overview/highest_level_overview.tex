@@ -9,7 +9,8 @@
 % TODO: Save tikzpicture as image every time it's rendered 
 
  
-\begin{tikzpicture}[font=\small,thick]
+
+\begin{tikzpicture}[font=\small,thick, scale=3]
  
 % Start block
 \node[draw,
@@ -89,7 +90,7 @@
     (react) edge (web)
     (reactnative) edge (android)
     (reactnative) edge (ios);
- 
+
 %\draw[-latex] (block4) -| (block5)
 %    node[pos=0.25,fill=white,inner sep=0]{Yes};
 % 
@@ -109,10 +110,5 @@
 %\draw (block8) |- (block7|-block12);
 %\draw (block10) |- (block9|-block12);
 %\draw[-latex] (block12) -- (block11);
-
-
-
- 
 \end{tikzpicture}
- 
 \end{document}
