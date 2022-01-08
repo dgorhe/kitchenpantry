@@ -5,19 +5,20 @@ parser = argparse.ArgumentParser(description = "Call Firebase Functions via comm
 
 # Positional arg for function to call
 parser.add_argument(
-        'function', 
+        'function',
         nargs=1,
-        type=str, 
+        type=str,
         help='function name to call',
 )
 
 # Whether the call is for emulator or deployment
 parser.add_argument(
-        '--local', 
-        nargs=1, 
-        type=bool, 
-        choices=[True, False], 
-        default=True
+        '--local',
+        nargs=1,
+        type=bool,
+        choices=[True, False],
+        default=True,
+        help="Whether you want to call the function via the emulator. By default true."
 )
 
 # JSON body to send to function
@@ -43,6 +44,8 @@ def generate_default_body(data):
             "data": data
     })
 
+# TODO: Try to grep all the functions in index.js
+
 functions = {
     "testFunction": generate_default_body("recipe_id")
 }
@@ -50,9 +53,11 @@ functions = {
 args = parser.parse_args()
 
 if args.local[0] == True:
-    based_url = "https:localhost:4000/functions/"
+    base_url = "https:localhost:4000/functions/"
 else:
     base_url = "https://somethingelseidontremember"
 
 
 # Continue writing this later
+url = base_url + functions[args.function[0]]
+response = requests.post()
