@@ -6,9 +6,9 @@ export const _testingEndpointInference = async (text: string, auth: any) => {
 
     // Need to look up how to format this again
     const body = {
-      "instances": [
-        { "instance_key_1": "value"}
-      ]
+        "instances": [
+            { "instance_key_1": "value" },
+        ],
     };
 
     // Hard coding this temporarily, will eventually change to project environment variables
@@ -26,13 +26,12 @@ export const _testingEndpointInference = async (text: string, auth: any) => {
     try {
         const response = await fetch(url, {
             method: "GET",
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
         });
 
         const data = await response.json();
         console.log(data);
-
-    } catch(error) {
+    } catch (error) {
         console.log(error.message);
         console.log(error.stack);
         return error;

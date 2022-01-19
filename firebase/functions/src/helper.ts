@@ -10,12 +10,12 @@ import { db } from "./admin";
  * @author Darvesh Gorhe
  */
 export const readDocument = async (collection: string, documentName: string) => {
-    let doc;
+    let querySnapshot;
     let data;
 
     try {
-        doc = db.collection(collection).orderBy("metadata.timestamp", "desc").limit(1).get();
-        data = await doc[0].data();
+        querySnapshot = await db.collection(collection).orderBy("metadata.timestamp", "desc").limit(1).get();
+        data = await querySnapshot.docs[0].data();
         return data;
     } catch (error) {
         logger.error(error.message);

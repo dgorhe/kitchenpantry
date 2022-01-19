@@ -6,12 +6,9 @@ function Navigation() {
         <div className='navigation'>
             <nav className='navbar navbar-expand navbar-dark bg-dark'>
                 <div className='container'>
-                    <NavLink className='navbar-brand' to="/">
-                        Kitchen Pantry
-                    </NavLink>
-                    <div>
-                        <ul className='navbar-nav ml-auto'>
-                            <li className='nav-item'>
+                    <div class="col align-items-center">
+                        <ul className='navbar-nav'>
+                            <li className='nav-item ml-auto'>
                                 <NavLink className="nav-link" to="/">
                                     Home
                                     <span className='sr-only'>(current)</span>
@@ -22,6 +19,17 @@ function Navigation() {
                                     About
                                 </NavLink>
                             </li>
+                            <li className='nav-item'>
+                                <NavLink className="nav-link" to="/classification">
+                                    Classification
+                                </NavLink>
+                            </li>
+                            {/* Temporarily removing this to focus on minimum viable product */}
+                            {/* <li className='nav-item'>
+                                <NavLink className="nav-link" to="/ocr">
+                                    OCR
+                                </NavLink>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

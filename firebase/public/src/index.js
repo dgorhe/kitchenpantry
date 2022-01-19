@@ -7,10 +7,9 @@ import {
   Navigation,
   Home,
   About,
-  // Footer,
-  // Labeler,
-  // ReceiptOCR,
-  // Classification 
+  OCR,
+  Classification,
+  // Footer
 } from "./components";
 
 ReactDOM.render(
@@ -19,6 +18,8 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/classification" element={<Classification />}/>
+        <Route path="/ocr" element={<OCR />}/>
       </Routes>
   </Router>,
 

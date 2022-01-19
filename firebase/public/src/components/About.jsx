@@ -5,7 +5,7 @@ function About() {
         <div className='about'>
             <div class='container'>
                 <div class='row align-items-center my-5'>
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 ml-auto">
                     <h1>Background and Motivation</h1>
                     <p>
                         So far this is a personal project from me, Darvesh Gorhe. If anyone wants to help with 
